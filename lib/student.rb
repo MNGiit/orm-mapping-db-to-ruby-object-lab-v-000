@@ -56,7 +56,9 @@ class Student
       WHERE grade <= 11
     SQL
     
-    DB[:conn].execute(sql).map
+    DB[:conn].execute(sql).each do |data|
+      self.new_from_db(data)
+    end
   end
   
   def save
