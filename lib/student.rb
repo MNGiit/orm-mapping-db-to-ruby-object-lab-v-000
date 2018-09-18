@@ -66,6 +66,7 @@ class Student
       SELECT *
       FROM students
       WHERE grade = 10
+      ORDER BY 
     SQL
     
     sql[0]
