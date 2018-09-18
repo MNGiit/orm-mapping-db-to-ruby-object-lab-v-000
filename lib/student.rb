@@ -69,7 +69,8 @@ class Student
       ORDER BY students.id
     SQL
     
-    sql[0]
+    
+    #sql[0]
   end
   
   def save
