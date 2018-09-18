@@ -69,7 +69,8 @@ class Student
       ORDER BY students.id
     SQL
     
-    
+    x = self.new_from_db(sql[0])
+    x
     #sql[0]
   end
   
