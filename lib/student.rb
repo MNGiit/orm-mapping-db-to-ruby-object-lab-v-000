@@ -73,7 +73,10 @@ class Student
     #sql[0]
     #x = self.new_from_db(DB[:conn].execute(sql[0]))
     #x
-    x = self.new_from_db(DB[:conn].execute(sql))
+
+    DB[:conn].execute(sql).collect each do |data, number|
+      self.new_from_db(data)
+    end
     
   end
   
