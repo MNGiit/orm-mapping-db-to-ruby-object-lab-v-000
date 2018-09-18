@@ -95,7 +95,20 @@ class Student
     x.first # or x[0] also works
     
   end
-  
+
+  def self.all_students_in_grade_X(grade)
+    sql = <<-SQL
+      SELECT *
+      FROM students
+      WHERE grade = ?
+      ORDER BY students.id
+    SQL
+    
+    DB[:conn].execute(sql).collect do |data|
+      self.new_from_db(data)
+    end
+    
+  end
   def save
     sql = <<-SQL
       INSERT INTO students (name, grade) 
