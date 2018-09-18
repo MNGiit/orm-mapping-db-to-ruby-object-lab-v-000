@@ -67,12 +67,12 @@ class Student
       FROM students
       WHERE grade = 10
       ORDER BY students.id
-      LIMIT 1
+      LIMIT ?
     SQL
     
+    sql[0]
     x = self.new_from_db(sql)
     x
-    #sql[0]
   end
   
   def save
