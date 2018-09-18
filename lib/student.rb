@@ -92,7 +92,7 @@ class Student
     x = DB[:conn].execute(sql).collect do |data|
       self.new_from_db(data)
     end
-    #x[0]
+    x.first # or x[0] also works
     
   end
   
