@@ -60,6 +60,16 @@ class Student
       self.new_from_db(data)
     end
   end
+
+  def self.first_X_students_in_grade_10
+    sql = <<-SQL
+      SELECT *
+      FROM students
+      WHERE grade = 10
+    SQL
+    
+    sql[0]
+  end
   
   def save
     sql = <<-SQL
