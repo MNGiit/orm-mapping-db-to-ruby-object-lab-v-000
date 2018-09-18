@@ -104,7 +104,7 @@ class Student
       ORDER BY students.id
     SQL
     
-    DB[:conn].execute(sql).collect do |data|
+    DB[:conn].execute(sql, grade).collect do |data|
       self.new_from_db(data)
     end
     
