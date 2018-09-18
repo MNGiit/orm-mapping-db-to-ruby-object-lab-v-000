@@ -67,11 +67,11 @@ class Student
       FROM students
       WHERE grade = 10
       ORDER BY students.id
-      LIMIT ?
+      LIMIT 1
     SQL
     
     sql[0]
-    x = self.new_from_db(sql)
+    x = self.new_from_db(DB[:conn].execute(sql[0]))
     x
   end
   
