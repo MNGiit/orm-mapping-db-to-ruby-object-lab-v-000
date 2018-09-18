@@ -73,6 +73,7 @@ class Student
     #sql[0]
     #x = self.new_from_db(DB[:conn].execute(sql[0]))
     #x
+    x = self.new_from_db(DB[:conn].execute(sql))
     
   end
   
